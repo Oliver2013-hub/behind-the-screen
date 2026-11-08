@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bbf6fgwokdcij"]
+
+[ext_resource type="PackedScene" uid="uid://b145be5ad1g5j" path="res://models/Jason's Isometric Room by Jason Toff - 8NsrLwbXhfl.glb" id="1_ldqot"]
+
+[node name="Rebbeca\'s Room" type="Node3D" unique_id=554382913]
+
+[node name="Jason\'s Isometric Room by Jason Toff - 8NsrLwbXhfl" parent="." unique_id=116252368 instance=ExtResource("1_ldqot")]

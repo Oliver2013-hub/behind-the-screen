@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Behind The Screen"
+run/main_scene="uid://bj2dl2h2tiykb"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [display]

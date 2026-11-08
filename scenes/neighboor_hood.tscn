@@ -1,0 +1,408 @@
+[gd_scene format=3 uid="uid://bj2dl2h2tiykb"]
+
+[ext_resource type="Texture2D" uid="uid://g3hpjl5b2s1i" path="res://textures/skybox-day.png" id="1_uk1kr"]
+[ext_resource type="PackedScene" uid="uid://cvdivb83sf6s6" path="res://models/Farm house by Poly by Google - bHyQe5jzdiQ.glb" id="2_snhqv"]
+[ext_resource type="PackedScene" uid="uid://cqgjmrbi4tb8c" path="res://models/Road block by Luca Regazzi (okon3) - e3QRTZLNQU5.glb" id="3_oukab"]
+[ext_resource type="PackedScene" uid="uid://c103q66l0lbpy" path="res://models/Tree by Marc Solà - 6Yjt8nIwLsD.glb" id="4_u8yam"]
+[ext_resource type="Script" uid="uid://dfeew0wysss5y" path="res://scripts/opening_scene_text_handling.gd" id="5_oukab"]
+[ext_resource type="FontFile" uid="uid://bakhx5wtc3coa" path="res://fonts/Oxygen-Bold.ttf" id="5_snhqv"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r3nmj"]
+panorama = ExtResource("1_uk1kr")
+
+[sub_resource type="Sky" id="Sky_1x3kl"]
+sky_material = SubResource("PanoramaSkyMaterial_r3nmj")
+
+[sub_resource type="Environment" id="Environment_ifeun"]
+background_mode = 2
+sky = SubResource("Sky_1x3kl")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ifeun"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1x3kl"]
+albedo_color = Color(0, 0.34509805, 0, 1)
+
+[sub_resource type="Animation" id="Animation_uk1kr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(110.26754, 5.968149, 13.755508)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CanvasLayer/Control/text/presents:visible_characters")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [36]
+}
+
+[sub_resource type="Animation" id="Animation_snhqv"]
+resource_name = "camera_moving"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(110.26754, 5.968149, 13.755508), Vector3(77.857, 5.968, 13.756)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oukab"]
+_data = {
+&"RESET": SubResource("Animation_uk1kr"),
+&"camera_moving": SubResource("Animation_snhqv")
+}
+
+[sub_resource type="Animation" id="Animation_oukab"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../fade:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_07x5s"]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../fade:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ggcof"]
+resource_name = "name"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("name:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.39),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_u8yam"]
+resource_name = "presents_dots"
+length = 5.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("presents:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0999994, 2.6466663, 3.1100001, 3.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [33, 33, 34, 35, 36]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("presents:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.93, 4.55),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljpo2"]
+_data = {
+&"RESET": SubResource("Animation_oukab"),
+&"fadein": SubResource("Animation_07x5s"),
+&"name": SubResource("Animation_ggcof"),
+&"presents_dots": SubResource("Animation_u8yam")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oukab"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_ljpo2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n1dje"]
+resource_name = "fade"
+length = 2.0666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.45, 1.38),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ggcof"]
+_data = {
+&"RESET": SubResource("Animation_ljpo2"),
+&"fade": SubResource("Animation_n1dje")
+}
+
+[node name="neighboor hood" type="Node3D" unique_id=994441732]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=311683891]
+environment = SubResource("Environment_ifeun")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=309468468]
+transform = Transform3D(-4.222196e-08, -0.25881904, 0.9659258, -1.131334e-08, 0.9659258, 0.25881904, -1, 0, -4.371139e-08, 134.8968, 28.295649, 0)
+shadow_enabled = true
+
+[node name="floor" type="MeshInstance3D" parent="." unique_id=1959598972]
+transform = Transform3D(314.855, 0, 0, 0, 314.855, 0, 0, 0, 314.855, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ifeun")
+surface_material_override/0 = SubResource("StandardMaterial3D_1x3kl")
+
+[node name="houses & road" type="Node3D" parent="." unique_id=331856027]
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ" parent="houses & road" unique_id=1877977627 instance=ExtResource("2_snhqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.093704)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ2" parent="houses & road" unique_id=177429080 instance=ExtResource("2_snhqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.940422, 0, -5.093704)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ3" parent="houses & road" unique_id=2059822874 instance=ExtResource("2_snhqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.66602, 0, -5.093704)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ4" parent="houses & road" unique_id=14903744 instance=ExtResource("2_snhqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.85991, 0, -5.093704)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ5" parent="houses & road" unique_id=1250161317 instance=ExtResource("2_snhqv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 97.23318, 0, 33.053238)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ6" parent="houses & road" unique_id=1529435518 instance=ExtResource("2_snhqv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 63.292755, 0, 33.053234)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ7" parent="houses & road" unique_id=1420992634 instance=ExtResource("2_snhqv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 31.567154, 0, 33.053234)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ8" parent="houses & road" unique_id=1804546742 instance=ExtResource("2_snhqv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.26087523, 0, 33.182346)
+
+[node name="Road block by Luca Regazzi (okon3) - e3QRTZLNQU5" parent="houses & road" unique_id=548770422 instance=ExtResource("3_oukab")]
+transform = Transform3D(200, 0, 0, 0, 20, 0, 0, 0, 30, 42.929, 0, 14.157)
+
+[node name="Tree by Marc Solà - 6Yjt8nIwLsD" parent="houses & road" unique_id=361487318 instance=ExtResource("4_u8yam")]
+transform = Transform3D(2.9318242, 0, 5.19477, 0, 5.965, 0, -5.19477, 0, 2.9318242, 81.074524, 7.49593, 28.721144)
+
+[node name="Tree by Marc Solà - 6Yjt8nIwLsD2" parent="houses & road" unique_id=491502079 instance=ExtResource("4_u8yam")]
+transform = Transform3D(-1.3067858, 0, 4.4626017, 0, 4.65, 0, -4.4626017, 0, -1.3067858, 50.232, 6, 0.209)
+
+[node name="houses & road2" type="Node3D" parent="." unique_id=520997761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -122.99463, 0, 0)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ" parent="houses & road2" unique_id=100754506 instance=ExtResource("2_snhqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.093704)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ2" parent="houses & road2" unique_id=1346194418 instance=ExtResource("2_snhqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.940422, 0, -5.093704)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ3" parent="houses & road2" unique_id=1896597259 instance=ExtResource("2_snhqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.66602, 0, -5.093704)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ4" parent="houses & road2" unique_id=520725098 instance=ExtResource("2_snhqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.85991, 0, -5.093704)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ5" parent="houses & road2" unique_id=2134495513 instance=ExtResource("2_snhqv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 97.23318, 0, 33.053238)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ6" parent="houses & road2" unique_id=1365455279 instance=ExtResource("2_snhqv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 63.292755, 0, 33.053234)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ7" parent="houses & road2" unique_id=447376426 instance=ExtResource("2_snhqv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 31.567154, 0, 33.053234)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ8" parent="houses & road2" unique_id=1216787762 instance=ExtResource("2_snhqv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.26087523, 0, 33.182346)
+
+[node name="Road block by Luca Regazzi (okon3) - e3QRTZLNQU5" parent="houses & road2" unique_id=861490918 instance=ExtResource("3_oukab")]
+transform = Transform3D(200, 0, 0, 0, 20, 0, 0, 0, 30, 42.929, 0, 14.157)
+
+[node name="Tree by Marc Solà - 6Yjt8nIwLsD" parent="houses & road2" unique_id=719171747 instance=ExtResource("4_u8yam")]
+transform = Transform3D(2.9318242, 0, 5.19477, 0, 5.965, 0, -5.19477, 0, 2.9318242, 81.074524, 7.49593, 28.721144)
+
+[node name="Tree by Marc Solà - 6Yjt8nIwLsD2" parent="houses & road2" unique_id=661357851 instance=ExtResource("4_u8yam")]
+transform = Transform3D(-1.3067858, 0, 4.4626017, 0, 4.65, 0, -4.4626017, 0, -1.3067858, 50.232, 6, 0.209)
+
+[node name="houses & road3" type="Node3D" parent="." unique_id=1092960705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -248.37447, 0, 0)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ" parent="houses & road3" unique_id=1409950536 instance=ExtResource("2_snhqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.093704)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ2" parent="houses & road3" unique_id=559156501 instance=ExtResource("2_snhqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.940422, 0, -5.093704)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ3" parent="houses & road3" unique_id=1675440585 instance=ExtResource("2_snhqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.66602, 0, -5.093704)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ4" parent="houses & road3" unique_id=934730921 instance=ExtResource("2_snhqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.85991, 0, -5.093704)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ5" parent="houses & road3" unique_id=654881807 instance=ExtResource("2_snhqv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 97.23318, 0, 33.053238)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ6" parent="houses & road3" unique_id=1047020874 instance=ExtResource("2_snhqv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 63.292755, 0, 33.053234)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ7" parent="houses & road3" unique_id=1208558395 instance=ExtResource("2_snhqv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 31.567154, 0, 33.053234)
+
+[node name="Farm house by Poly by Google - bHyQe5jzdiQ8" parent="houses & road3" unique_id=1851390095 instance=ExtResource("2_snhqv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.26087523, 0, 33.182346)
+
+[node name="Road block by Luca Regazzi (okon3) - e3QRTZLNQU5" parent="houses & road3" unique_id=859934752 instance=ExtResource("3_oukab")]
+transform = Transform3D(200, 0, 0, 0, 20, 0, 0, 0, 30, 42.929, 0, 14.157)
+
+[node name="Tree by Marc Solà - 6Yjt8nIwLsD" parent="houses & road3" unique_id=1520445883 instance=ExtResource("4_u8yam")]
+transform = Transform3D(2.9318242, 0, 5.19477, 0, 5.965, 0, -5.19477, 0, 2.9318242, 81.074524, 7.49593, 28.721144)
+
+[node name="Tree by Marc Solà - 6Yjt8nIwLsD2" parent="houses & road3" unique_id=2023463888 instance=ExtResource("4_u8yam")]
+transform = Transform3D(-1.3067858, 0, 4.4626017, 0, 4.65, 0, -4.4626017, 0, -1.3067858, 50.232, 6, 0.209)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2102403391]
+transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 110.26754, 5.968149, 13.755508)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=539995729]
+root_node = NodePath("../Camera3D")
+libraries/ = SubResource("AnimationLibrary_oukab")
+autoplay = &"camera_moving"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1571730769]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1305567726]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="text" type="Panel" parent="CanvasLayer/Control" unique_id=1411387504]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_oukab")
+
+[node name="name" type="Label" parent="CanvasLayer/Control/text" unique_id=256470406]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -26.5
+offset_right = 180.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 14
+theme_override_fonts/font = ExtResource("5_snhqv")
+theme_override_font_sizes/font_size = 41
+text = "Behind The Screen"
+
+[node name="presents" type="Label" parent="CanvasLayer/Control/text" unique_id=1022556311]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = -26.5
+offset_right = 348.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 14
+theme_override_fonts/font = ExtResource("5_snhqv")
+theme_override_font_sizes/font_size = 41
+text = "Just Another Game Studio prezintă..."
+visible_characters = 36
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/text" unique_id=1520603803]
+libraries/ = SubResource("AnimationLibrary_ljpo2")
+autoplay = &"presents_dots"
+
+[node name="fade" type="Panel" parent="CanvasLayer/Control" unique_id=185128533]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oukab")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/fade" unique_id=482277496]
+libraries/ = SubResource("AnimationLibrary_ggcof")
+autoplay = &"fade"
+
+[connection signal="animation_finished" from="CanvasLayer/Control/text/AnimationPlayer" to="CanvasLayer/Control/text" method="_on_animation_player_animation_finished"]
